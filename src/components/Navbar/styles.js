@@ -13,6 +13,30 @@ export default makeStyles((theme) => ({
       marginLeft: drawerWidth,
     },
   },
+  toolbar:{
+    background:"white",
+    width:"-moz-max-content",
+    height:"-webkit-fit-content"
+  },
+  dropDowd:{
+    flex: 1,
+    width: "max-content",
+    height: "max-content",
+
+  },
+  button:{
+    margin: "0 20px",
+    padding: "20px 40px",
+    fontSize: "78px"
+  },
+  buttonMenu:{
+    backgroundColor: "white",
+    padding: "10px 20px",
+    borderRadius: "8px",
+    textAlign: "center",
+    fontSize: "94px",
+    color: "white"
+  },
   title: {
     flexGrow: 1,
     alignItems: "center",
@@ -26,14 +50,34 @@ export default makeStyles((theme) => ({
       boxShadow: "none",
     },
   },
+  navContainer:{
+    width:"2200px",
+    height:"200px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: "10px",
+    backgroundColor: "white",
+    marginTop: "20px"
+  },
+  titleName:{
+    color:"darkgreen",
+    fontSize:"xxx-large",
+    marginLeft:"30px"
+  },
   cartt: {
+    marginLeft:"100px",
     "&:hover": {
       color: "#ffff",
       boxShadow: "none",
     },
   },
   image: {
-    marginRight: "10px",
+    marginLeft: "70px",
+    marginTop:"50px",
+    marginBottom:"50px",
+    width:"200px",
+    height:"200px"
   },
   menuButton: {
     marginRight: theme.spacing(2),
