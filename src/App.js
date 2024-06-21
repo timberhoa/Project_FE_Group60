@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 import {commerce} from "./lib/commerce";
 import ProductView from "./components/ProductView/ProductView";
 import Products from "./components/Products/Products";
+import Footer from "./components/Footer/Footer";
 
 
 
@@ -56,6 +57,7 @@ const App = () => {
                   </Switch>
                 </div>
               </Router>
+              <Footer/>
             </>
         ) : (
             <div className="loader">
