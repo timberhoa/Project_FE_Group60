@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
-  mainPage: { flexGrow: 1, overflowX: "hidden", overflowY: "hidden" },
+  mainPage: { flexGrow: 1, overflowX: "hidden", overflowY: "hidden", },
   content: {
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
@@ -11,11 +11,10 @@ export default makeStyles((theme) => ({
   },
   hero: {
     flexDirection: "column",
-    height: "90vh",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    padding: theme.spacing(20),
+    padding: theme.spacing(5),
     backgroundColor: "white",
   },
   heroHeader: {

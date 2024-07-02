@@ -4,7 +4,7 @@ import {
   Toolbar,
   IconButton,
   Badge,
-  Typography,
+  Typography, Input, InputAdornment,
 } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
 import { Link } from "react-router-dom";
@@ -12,6 +12,7 @@ import logo from "../../assets/logo.png";
 import useStyles from "./styles";
 import { Menu, MenuItem, Button, ListItemText } from '@mui/material';
 import { FaBars, FaChevronDown } from 'react-icons/fa';
+import SearchIcon from "@material-ui/icons/Search";
 
 
 const Navbar = ({ totalItems }) => {
@@ -36,8 +37,9 @@ const Navbar = ({ totalItems }) => {
               height="50px"
               className={classes.image}
           />
-          <div className={classes.titleName}>BOOKSHOP</div>
+
           <div className={classes.navContainer}>
+
             <div className={classes.dropDowd}>
               <Button classes={classes.buttonMenu}
                       aria-controls="simple-menu"
@@ -80,13 +82,13 @@ const Navbar = ({ totalItems }) => {
               </Menu>
             </div>
 
-            <button>
+            <button className={classes.btn}>
               Trang Chủ
             </button>
-            <button>
+            <button className={classes.btn}>
               Trang Chủ
             </button>
-            <button>
+            <button className={classes.btn}>
               Trang Chủ
             </button>
 

@@ -12,6 +12,7 @@ import bioBg from "../../assets/biography.jpg";
 import fictionBg from "../../assets/fiction.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import ImageSlider from "../SliderImage/slider";
 
 const Products = ({ products, onAddToCart, featureProducts }) => {
   const classes = useStyles();
@@ -19,7 +20,11 @@ const Products = ({ products, onAddToCart, featureProducts }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const sectionRef = useRef(null);
-
+  const images = [
+    'https://newshop.vn/public/uploads/news/nhung-cuon-sach-van-hoc-hay.jpg',
+    'https://meannhien.com/wp-content/uploads/2023/07/image-10-1024x303.png',
+    'https://meannhien.com/wp-content/uploads/2023/07/image-13-1024x303.png',
+  ];
   const handleInputClick = () => {
     // Scrolls to the section when the input is clicked
     sectionRef.current.scrollIntoView({ behavior: "smooth" });
@@ -27,25 +32,25 @@ const Products = ({ products, onAddToCart, featureProducts }) => {
 
   return (
     <main className={classes.mainPage}>
-      <div className={classes.toolbar} />
-      <img src={scrollImg} className={classes.scrollImg} />
+      <ImageSlider images={images} />
+      {/*<div className={classes.toolbar} />*/}
+      {/*<img src={scrollImg} className={classes.scrollImg} />*/}
       <div className={classes.hero}>
-        <img className={classes.heroImg} src={logo1} height="720px" />
-
+        {/*<img className={classes.heroImg} src={logo1} height="720px" />*/}
         <div className={classes.heroCont}>
-          <h1 className={classes.heroHeader}>
-            Discover Your Next Favorite Book Here.
+          <h1 className={classes.heroHeader} ref={sectionRef}>
+            Khuyến Mãi Cực Hot Dành Cho Thành Viên Mới.
           </h1>
-          <h3 className={classes.heroDesc} ref={sectionRef}>
-            Explore our curated collection of new and popular books to find your
-            next literary adventure.
+          <h3 className={classes.heroDesc} >
+           Giảm 500k cho những thành viên mới với bất kỳ loại sách cho hóa đơn
+            có giá trị trên 799k.
           </h3>
           <div className={classes.searchs}>
             <Input
               className={classes.searchb}
               type="text"
-              placeholder="Which book are you looking for?"
-              onClick={handleInputClick}
+              placeholder="Tìm sách của bạn tại đây."
+               onClick={handleInputClick}
               onChange={(event) => {
                 setSearchTerm(event.target.value);
               }}
