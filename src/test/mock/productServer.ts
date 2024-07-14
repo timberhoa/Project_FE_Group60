@@ -3,11 +3,11 @@ import { setupServer } from "msw/node"
 
 import { product1, product2, product3, product4, product5, products } from "../data/products"
 import { CreateProduct } from "../../type/CreateProduct"
-import categories from "../data/categories"
+import categories from "../data/cartegories"
 import { Product } from "../../type/Product"
 import { ProductUpdate } from "../../type/ProductUpdate"
 import { Update } from "@reduxjs/toolkit"
-import products from "../data/products.json";
+// import products from "../data/products.json";
 
 let productServerId = 800
 let updateRequestId = 770

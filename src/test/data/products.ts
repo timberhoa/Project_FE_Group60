@@ -1,7 +1,7 @@
 import { CreateProduct } from "../../type/CreateProduct";
 import { Product } from "../../type/Product";
 import { ProductUpdate } from "../../type/ProductUpdate";
-import { category1, category2, category3 } from "./categories";
+import { category1, category2, category3 } from "./cartegories";
 
 const product1: Product = {
     id: 770,
