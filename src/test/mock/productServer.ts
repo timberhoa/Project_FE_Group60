@@ -7,6 +7,7 @@ import categories from "../data/categories"
 import { Product } from "../../type/Product"
 import { ProductUpdate } from "../../type/ProductUpdate"
 import { Update } from "@reduxjs/toolkit"
+import products from "../data/products.json";
 
 let productServerId = 800
 let updateRequestId = 770

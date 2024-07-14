@@ -1,13 +1,13 @@
 import { rest } from "msw"
 import { setupServer } from "msw/lib/node"
 
-import { user1, user2, user3, user4 } from "../data/users"
+import { user1, user2, user3 } from "../data/users"
 import { User } from "../../type/User"
 
 const userServer = setupServer(
     rest.get("https://api.escuelajs.co/api/v1/users", (req, res, ctx) => {
         return res(
-            ctx.json([user1, user2, user3, user4])
+            ctx.json([user1, user2, user3])
         )
     }),
     rest.post("https://api.escuelajs.co/api/v1/users", async (req, res, ctx) => {

@@ -2,18 +2,18 @@ import { NewUser, User } from "../../type/User"
 
 const user1: User = {
     id: 1,
-    email: "hill@gmail.com",
-    name: "hill",
-    password: "hill",
+    email: "kien@gmail.com",
+    name: "kien",
+    password: "kien",
     avatar: "",
     role: "admin"
 }
 
 const user2: User = {
     id: 2,
-    email: "karina@gmail.com",
-    name: "karina",
-    password: "karina",
+    email: "truong@gmail.com",
+    name: "truong",
+    password: "truong",
     avatar: "",
     role: "customer"
 }
@@ -27,21 +27,6 @@ const user3: User = {
     role: "admin"
 }
 
-const user4: User = {
-    id: 4,
-    email: "bismark@mail.com",
-    name: "bismark",
-    password: "bismark",
-    avatar: "https://unsplash.com/photos/PyCTsJsdtG0",
-    role: "customer"
-}
 
-const newUser: NewUser = {
-    name: "Benjamin",
-    email: "ben@gmail.com",
-    password: "testUser",
-    avatar: "https://unsplash.com/photos/PyCTsJsdtG0"
-}
-
-export const users = [user1, user2, user3, user4]
-export { user1, user2, user3, user4, newUser } 
+export const users = [user1, user2, user3]
+export { user1, user2, user3} 
