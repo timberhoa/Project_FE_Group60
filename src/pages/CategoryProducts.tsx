@@ -126,7 +126,7 @@ const CategoryProducts = () => {
                       </Typography>
                       <Typography variant="body1" color="text.secondary">{product.category.name}</Typography>
                       <Typography variant="body2" color="text.secondary">
-                        {product.price} EUR
+                        {product.price} VND
                       </Typography>
                     </CardContent>
                   </Link>

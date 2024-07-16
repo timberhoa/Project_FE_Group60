@@ -1,5 +1,5 @@
 import usersReducer, { cleanUpUsersReducer, fetchAllUsers, login, registerUser } from "../../redux/reducers/usersReducer"
-import { newUser } from "../data/users"
+// import { newUser } from "../data/users"
 import userServer from "../mock/userServer"
 import store from "../shared/store"
 

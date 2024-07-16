@@ -12,7 +12,7 @@ const initialState: CategoryState = {
     categoryProducts: []
 }
 
-const BASE_URL = 'https://api.escuelajs.co/api/v1'
+const BASE_URL = 'http://localhost:3001'
 
 export const fetchAllCartegories = createAsyncThunk(
     "cartegories",

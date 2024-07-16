@@ -203,7 +203,7 @@ const HomePage = () => {
                           {product.category.name}
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                          {product.price} EUR
+                          {product.price} VND
                         </Typography>
                       </CardContent>
                     </Link>

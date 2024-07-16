@@ -7,63 +7,61 @@ import categories from "../data/cartegories"
 import { Product } from "../../type/Product"
 import { ProductUpdate } from "../../type/ProductUpdate"
 import { Update } from "@reduxjs/toolkit"
-// import products from "../data/products.json";
 
 let productServerId = 800
 let updateRequestId = 770
 let deleteId = 774
 const productServer = setupServer(
-    rest.get("https://api.escuelajs.co/api/v1/products", (req, res, ctx) => {
+    rest.get("http://localhost:3001/products", (req, res, ctx) => {
         return res(
-            ctx.json([product1, product2, product3, product4, product5])
-        )
-    }),
-    rest.post("https://api.escuelajs.co/api/v1/products/", async (req, res, ctx) => {
-        const newProduct = await req.json() as CreateProduct
-        const category = categories.find(c => c.id === newProduct.categoryId)
-        const error: string[] = []
-        let product: Product | null = null
+          ctx.json([product1, product2, product3, product4, product5])
+        );
+      }),
+      rest.post("http://localhost:3001/products", async (req, res, ctx) => {
+        const newProduct = await req.json() as CreateProduct;
+        const category = categories.find(c => c.id === newProduct.categoryId);
+        const error: string[] = [];
+        let product: Product | null = null;
+        
         if (!(newProduct.price > 0)) {
-            error.push("Price must be greater than 0")
+          error.push("Price must be greater than 0");
         }
         if (!Array.isArray(newProduct.images)) {
-            error.push("Images must be an array")
-        }
-        else if (newProduct.images.length < 1) {
-            error.push("Images must contain at least 1 image.")
-        }
-        else if (newProduct.images.some(item => typeof item !== "string")) {
-            error.push("Images must be an array of string.")
+          error.push("Images must be an array");
+        } else if (newProduct.images.length < 1) {
+          error.push("Images must contain at least 1 image.");
+        } else if (newProduct.images.some(item => typeof item !== "string")) {
+          error.push("Images must be an array of strings.");
         }
         if (!category) {
-            error.push("Category does not exist")
-        }
-        else {
-            product = {
-                title: newProduct.title,
-                price: newProduct.price,
-                category: category,
-                description: newProduct.description,
-                images: newProduct.images,
-                id: productServerId++
-            }
+          error.push("Category does not exist");
+        } else {
+          product = {
+            title: newProduct.title,
+            price: newProduct.price,
+            category: category,
+            description: newProduct.description,
+            images: newProduct.images,
+            id: productServerId++
+          };
         }
         if (error.length > 0) {
             return res(
-                ctx.status(400),
-                ctx.json({
-                    statusCode: 400,
-                    message: error,
-                    error: "Bad Request"
-                })
-            )
-        }
-        return res(
+              ctx.status(400),
+              ctx.json({
+                statusCode: 400,
+                message: error,
+                error: "Bad Request"
+              })
+            );
+          }
+          
+          return res(
             ctx.status(201),
             ctx.json(product)
-        )
-    }),
-    rest.put(`https://api.escuelajs.co/api/v1/products/${updateRequestId}`, async (req, res, ctx) => {
+          );
+        }),
+        rest.put("http://localhost:3001/products/:id", async (req, res, ctx) => {
         const updateRequest = await req.json() as ProductUpdate
         const error: string[] = []
         const index = products.findIndex(p => p.id == updateRequest.id)
@@ -93,7 +91,7 @@ const productServer = setupServer(
             )
         }
     }), 
-    rest.delete(`https://api.escuelajs.co/api/v1/products/${deleteId}`, async (res, req, ctx) => {
+    rest.delete("http://localhost:3001/products/:id", async (req, res, ctx) => {
     })
 )
 
